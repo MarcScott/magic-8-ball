@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:100italic,100,300italic,300,400italic,400,500italic,500,700italic,700,900italic,900">
+</head>
+<body>
+<div class="container">
+        <header class="header">
+            <a href="/resources/" class="heading" title="Back to raspberrypi.org">Raspberry Pi Learning Resources</a>
+        </header>
+
+        <nav class="nav breadcrumbs">
+            <ul>
+                            </ul>
+        </nav>
+
+        <nav class="nav resource-categories">
+            <ul>
+                <li class="teach"><a href="/resources/teach/">Teach</a></li>
+                <li class="learn"><a href="/resources/learn/">Learn</a></li>
+                <li class="make"><a href="/resources/make/">Make</a></li>
+            </ul>
+        </nav>
+
+        <div class="main">
+	  <article class="content">
+<h1 id="title">Magic 8 Ball</h1>
+<p>In this activity you will build your own Magic 8 Ball using your Raspberry Pi, a Sense HAT, and some Python code. A Magic 8 Ball is a toy which you ask a closed question to, then shake, and it will give you a prediction.</p>
+<p>In preparation for this resource, attach your Sense HAT to your Raspberry Pi by following <a href="https://www.raspberrypi.org/learning/astro-pi-guide/assemble.html">this guide</a>.</p>
+<h2 id="do">Using IDLE 3</h2>
+<p>A great way to write your code and test it in intervals is to use IDLE 3, a development application for Python. You will be writing your code in Python 3. You will need to open IDLE 3 in a special way to be able to control your Sense HAT later on.</p>
+<ol type="1">
+<li>Open a Terminal window by clicking on the <strong>Main Menu</strong>, followed by <strong>Accessories</strong> and then <strong>Terminal</strong>.</li>
+</ol>
+<figure>
+<img src="images/terminal-icon.png" />
+</figure>
+<ol type="1">
+<li>Type <code>sudo idle3 &amp;</code> and press <strong>Enter</strong> on the keyboard to launch IDLE 3 as the super user. This gives you super powers when running your program so that you can control your Sense HAT.</li>
+</ol>
+<figure>
+<img src="images/launch-idle.png" />
+</figure>
+<ol type="1">
+<li><p>Once the Python shell window has loaded, click on <strong>File</strong> and <strong>New Window</strong>. This will open a text editor window in which you can write, save and test your code.</p></li>
+<li><p>Save the blank file as <code>magic8ball.py</code> by clicking on <strong>File</strong> and <strong>Save As</strong>.</p></li>
+</ol>
+<h2 id="do">Printing replies to the screen randomly</h2>
+<p>A good way to start your Magic 8 Ball program is to first create a text version of a Magic 8 Ball program. Let's think about what a Magic 8 Ball does. First you ask it a question, before shaking the ball, turning it over and then reading a reply that it has randomly chosen. Therefore, you will need a list of replies and a way of randomly choosing one from the list and displaying that answer on the screen.</p>
+<ol type="1">
+<li>First you need to import the <code>random</code> library and the <code>time</code> library. Type the following into your magic8ball.py text file:</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> random
+<span class="ch">import</span> time</code></pre>
+<ol type="1">
+<li>Using the <code>print</code> function you can print text to the screen, to the person using your program. Type:</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&quot;Ask a question&quot;</span>)</code></pre>
+<ol type="1">
+<li>Then there needs to be a pause before the program responds with a reply, so that the user can ask a question. You can use the <code>time</code> library to ask the program to sleep for a set amount of time, like this:</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python">time.sleep(<span class="dv">3</span>)</code></pre>
+<p>The program will pause for three seconds. You can change this value to make the time longer or shorter.</p>
+<ol type="1">
+<li>Now create a list of replies that the program could give to the question.</li>
+</ol>
+<h4 id="explain">Lists can be named in much the same way as variables; for example, number = [1, 2, 3, 4]. This list called 'number' has four items in it. Your list will contain strings of text that will be displayed on the screen. These strings will be quite long.</h4>
+<p>To create your list, type:</p>
+<pre class="sourceCode python"><code class="sourceCode python">replies = [<span class="st">&#39;Signs point to yes&#39;</span>, <span class="st">&#39;Without a doubt&#39;</span>, <span class="st">&#39;You may rely on it&#39;</span>,]  </code></pre>
+<p>Add as many replies to your list as you like. Make sure that you separate each reply with a comma. You can break up your list onto multiple lines like this to make it easier to read, however this is not required for your program to work:</p>
+<pre class="sourceCode python"><code class="sourceCode python">replies = [<span class="st">&#39;Signs point to yes&#39;</span>,
+           <span class="co">&#39;Without a doubt&#39;</span>,
+           <span class="co">&#39;You may rely on it&#39;</span>,
+           <span class="co">&#39;Do not count on it&#39;</span>,
+           <span class="co">&#39;Looking good&#39;</span>,
+           <span class="co">&#39;Cannot predict now&#39;</span>,
+           <span class="co">&#39;It is decidedly so&#39;</span>,
+           <span class="co">&#39;Outlook not so good&#39;</span>
+            ]</code></pre>
+<ol type="1">
+<li>Finally, an instruction is needed to select an item from the list at random and then display it on the screen. You can use the <code>random</code> library to do this by typing:</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(random.choice(replies))</code></pre>
+<ol type="1">
+<li>Save your code by clicking on <strong>File</strong> and <strong>Save</strong>. Then run your program to test it works by clicking on <strong>Run</strong> and <strong>Run Module</strong>. You should see a similar output to this in the IDLE 3 shell window:</li>
+</ol>
+<figure>
+<img src="images/step1-code-output.png" />
+</figure>
+<h2 id="do">Display text on an LED Matrix</h2>
+<p>Now that you have text outputting to the Python 3 shell window on your screen, let's change the code so that the text scrolls across the LED Matrix on your Sense HAT. To do this, you will need to use the Astro Pi library and replace the print functions with an Astro Pi 'show message' function.</p>
+<ol type="1">
+<li>Underneath the imported modules section of your code, add the following lines:</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> astro_pi <span class="ch">import</span> AstroPi
+ap = AstroPi()</code></pre>
+<ol type="1">
+<li><p>Next replace <code>print</code> with <code>ap.show_message</code> in your code. There are two places where you will need to do this.</p></li>
+<li><p>Save your program by pressing <strong>Ctrl + S</strong> on your keyboard.</p></li>
+<li><p>Press <strong>F5</strong> to run and test your program.</p></li>
+<li><p>You may find that the text is slow to scroll across the LED Matrix on your Raspberry Pi. To speed up the text you can add <code>scroll_speed=(0.06)</code> to your text strings like this:</p></li>
+</ol>
+<figure>
+<img src="images/step2-code.png" />
+</figure>
+<h2 id="do">Shake to start</h2>
+<p>Traditional Magic 8 Balls require the person asking a question to shake it before a reply is given. This can be simulated with a Sense HAT using the accelerometer, which measures vibrations and movement. Accelerometers can be found in most smartphones that change the direction of the screen depending on which way you hold the device.</p>
+<p>Let's use the accelerometer on the Sense HAT to detect any change to the amount of g-force acting on each of its axes (x, y and z) before it runs the part of your program that gives a random answer to the user.</p>
+<ol type="1">
+<li>First you need to create a continuous loop in your code to check the amount of the accelerometer's movement. You can use a <code>while True:</code> loop to do this. Underneath your list of replies, type:</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">while</span> <span class="ot">True</span>:
+    x, y, z = ap.get_accelerometer_raw().values()
+
+    x = <span class="dt">abs</span>(x)
+    y = <span class="dt">abs</span>(y)
+    z = <span class="dt">abs</span>(z)</code></pre>
+<p><em>Note that capital letters and indentation are very important in Python. Make sure that you use 4 spaces to indent after a <code>:</code> line.</em></p>
+<p>Using <code>abs</code> converts any number into a positive number, which means that it will ignore the direction of shaking and check for the amount of shake!</p>
+<ol type="1">
+<li>Now it is time to set a condition in our code that checks to see if the x, y and z axes have changed (i.e. it is being moved) before it selects a random reply. If it does not detect movement then a reply will not be given.</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> x &gt; <span class="dv">2</span> or y &gt; <span class="dv">2</span> or z &gt; <span class="dv">2</span> :
+    ap.show_message(random.choice(replies))
+<span class="kw">else</span>:
+    ap.clear()</code></pre>
+<p>The program is checking to see if the axes of x, y and z are greater than the value 2. By changing this value you can change how sensitive the program is to movement. If you want someone to have to really shake the Raspberry Pi and Sense HAT a lot, use a higher value.</p>
+<ol type="1">
+<li><p>Save your program by pressing <strong>Ctrl + S</strong> on your keyboard.</p></li>
+<li><p>Press <strong>F5</strong> to run and test your program.</p></li>
+</ol>
+<figure>
+<img src="images/step3-code.png" />
+</figure>
+<h2 id="next">What's next?</h2>
+<ul>
+<li>The text is scrolling using the default colour white. Could you add some code to change the colours? See the <a href="https://www.raspberrypi.org/learning/getting-started-with-astro-pi/worksheet/">getting started with Astro Pi resource here</a> to help.</li>
+<li>Can you create a pixel art image of a Magic 8 Ball to appear on the LED Matrix as part of the program? See <a href="https://github.com/raspberrypilearning/astro-pi-guide/blob/master/inputs-outputs/led-matrix.html">drawing shapes and patterns</a> in this resource.<br /></li>
+<li>Could you add sound effects to your program to make it more interesting?</li>
+</ul>
+</article>
+
+            <div style="clear:both;"></div>
+
+            <footer class="footer">
+                <a href="/creative-commons/" class="logo cc">Creative Commons</a>
+                <small>
+                    <p>This learning resource is provided for free by the <a href="/">Raspberry Pi Foundation</a> under a <a href="/creative-commons/">Creative Commons</a> licence.</p>
+                    <p>Find more at <a href="/resources/">raspberrypi.org/resources</a> and <a href="https://github.com/raspberrypilearning">github.com/raspberrypilearning</a>.</p>
+                </small>
+                <a href="https://github.com/raspberrypilearning/getting-started-with-sonic-pi/" class="logo gh" title="View and edit this resource on GitHub">View and edit this resource on GitHub</a>
+            </footer>
+
+        </div>
+    </div>
+</body>
+</html>
