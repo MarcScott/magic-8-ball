@@ -20,7 +20,7 @@ A great way to write your code and test it in intervals is to use IDLE 3, a deve
 
 1. Save the blank file as `magic8ball.py` by clicking on **File** and **Save As**.
 
-<div style="page-break-before:always;"></div>
+<div style="page-break-before:always;">PAGE BREAK TEST</div>
 ## Printing replies to the screen randomly {#do}
 
 A good way to start your Magic 8 Ball program is to first create a text version of a Magic 8 Ball program. Let's think about what a Magic 8 Ball does. First you ask it a question, before shaking the ball, turning it over and then reading a reply that it has randomly chosen. Therefore, you will need a list of replies and a way of randomly choosing one from the list and displaying that answer on the screen.
