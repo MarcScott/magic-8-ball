@@ -4,7 +4,7 @@ In this activity you will build your own Magic 8 Ball using your Raspberry Pi, a
 
 In preparation for this resource, attach your Sense HAT to your Raspberry Pi by following [this guide](https://www.raspberrypi.org/learning/astro-pi-guide/assemble.md). 
 
-## Using IDLE 3 {#do} {#page-break-before:always}
+## Using IDLE 3 {#do;page-break-before:always}
 
 A great way to write your code and test it in intervals is to use IDLE 3, a development application for Python. You will be writing your code in Python 3. You will need to open IDLE 3 in a special way to be able to control your Sense HAT later on.
 
