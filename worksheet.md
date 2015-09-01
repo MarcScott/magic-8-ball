@@ -1,7 +1,7 @@
 
 ---
 title: 'BLAAAAAH'
-tags: [Scratch, SENSE HAT]
+tags: [Scratch, SENSE HAT, Grrr]
 ---
 
 # The Amazing Magic 8 Ball {#title}
