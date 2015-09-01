@@ -1,7 +1,10 @@
 
 ---
-title: 'BLAAAAAH'
-keywords: [Scratch, SENSE HAT, Grrr]
+title: BLAAAAAH
+keywords:
+- Scratch
+- SENSE HAT
+- Grrr
 ---
 
 # The Amazing Magic 8 Ball {#title}
