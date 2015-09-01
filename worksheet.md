@@ -1,7 +1,8 @@
 
 ---
-title: Come on
-keywords: Scratch, SENSE HAT, Grrr
+title: Magic 8 Ball
+header-includes:
+    <meta name="keywords" content="SENSE HAT, Scratch, KS2">
 ...
 
 # The Amazing Magic 8 Ball {#title}
