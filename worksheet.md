@@ -18,6 +18,7 @@ A great way to write your code and test it in intervals is to use IDLE 3, a deve
 
 ![](images/launch-idle.png)
 
+#### With GREAT POWER comes GREAT RESPONSIBILITY.{#warning}
 1. Once the Python shell window has loaded, click on **File** and **New Window**. This will open a text editor window in which you can write, save and test your code.
 
 1. Save the blank file as `magic8ball.py` by clicking on **File** and **Save As**.
@@ -51,7 +52,7 @@ The program will pause for three seconds. You can change this value to make the 
 
 
 
-#### Lists can be named in much the same way as variables; for example, number = [1, 2, 3, 4]. This list called 'number' has four items in it. Your list will contain strings of text that will be displayed on the screen. These strings will be quite long.{#explain}
+#### Lists can be named in much the same way as variables; for example, number = [1, 2, 3, 4]. This list called 'number' has four items in it. Your list will contain strings of text that will be displayed on the screen. These strings will be quite long.{#concept}
 
 
 	
