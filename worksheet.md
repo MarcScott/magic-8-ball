@@ -2,6 +2,8 @@
 
 In this activity you will build your own Magic 8 Ball using your Raspberry Pi, a Sense HAT, and some Python code. A Magic 8 Ball is a toy which you ask a closed question to, then shake, and it will give you a prediction.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OjkkB-oqRq4" frameborder="0" allowfullscreen></iframe>
+
 In preparation for this resource, attach your Sense HAT to your Raspberry Pi by following [this guide](https://www.raspberrypi.org/learning/astro-pi-guide/assemble.md). 
 
 ## Using IDLE 3 {#do}
