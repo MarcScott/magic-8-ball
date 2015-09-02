@@ -1,10 +1,10 @@
 
 ---
-title: Magic 8 Ball
+title: Magik 8 Ball
 keywords: Scratch, Sense HAT, KS2
 ...
 
-# The Amazing Magic 8 Ball {#title}
+# Magic 8 Ball {#title}
 
 In this activity you will build your own Magic 8 Ball using your Raspberry Pi, a Sense HAT, and some Python code. A Magic 8 Ball is a toy which you ask a closed question to, then shake, and it will give you a prediction.
 
